@@ -6,7 +6,7 @@ FROM openjdk:alpine
 ENV LC_ALL="en_US.utf8"
 
 # Copy jar-files
-COPY target/mdataserver-0.0.1-SNAPSHOT.jar /home/app.jar
+COPY target/mdataserver-0.0.1-SNAPSHOT-exec.jar /home/app.jar
 
 # Set workdir
 WORKDIR /home
