@@ -1,11 +1,18 @@
-FROM maven:3.5.4-jdk-8 as builder
-COPY . /usr/src/app
-WORKDIR /usr/src/app
-RUN mvn package
+# mvn clean repackage
+# Alpine-micro
+FROM openjdk:alpine
 
-FROM java:8-jdk
-COPY --from=builder /usr/src/app/target/mdataserver-0.0.1-SNAPSHOT.jar /usr/src/app/mdataserver-0.0.1-SNAPSHOT.jar
-WORKDIR /usr/src/app
+# Locale
+ENV LC_ALL="en_US.utf8"
+
+# Copy jar-files
+COPY target/mdataserver-0.0.1-SNAPSHOT.jar /home/app.jar
+
+# Set workdir
+WORKDIR /home
+
+# Expose the port
 EXPOSE 8080
-#CMD ["tail", "-f", "/dev/nulljava"]
-CMD ["java", "-jar", "/usr/src/app/mdataserver-0.0.1-SNAPSHOT.jar"]
+
+# Launch jar-files
+ENTRYPOINT exec java $JAVA_OPTS -jar /home/app.jar
