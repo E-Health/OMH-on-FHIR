@@ -8,5 +8,5 @@
     window.__env.omhOnFhirScope = 'patient/*.read launch'; //to force provider login use the following scopes 'openid profile'
     window.__env.omhOnFhirRedirectUri = 'http://tomcat.nuchange.ca/omhonfhir/login';
     window.__env.omhOnFhirAPIBase = 'http://tomcat.nuchange.ca/mdata';
-    window.__env.omhOnFhirAPIShimmerAuth = '/authorize';
+    window.__env.omhOnFhirAPIShimmerAuth = '/shimmerAuthentication';
 }(this));
