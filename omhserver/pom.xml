@@ -5,7 +5,7 @@
 
 	<groupId>org.gtri.hdap</groupId>
 	<artifactId>mdataserver</artifactId>
-	<version>0.99.0</version>
+	<version>0.99.9</version>
 	<packaging>jar</packaging>
 
 	<name>mdataserver</name>
@@ -34,16 +34,6 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>test</scope>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -51,10 +41,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
 
 		<!-- Needed for JSON processing -->
 		<dependency>
