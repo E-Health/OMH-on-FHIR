@@ -2,6 +2,33 @@
 
 Implementation of the OMH-on-FHIR application described here: https://healthedata1.github.io/mFHIR/#smart-app-workflow
 
+## About this fork
+
+This fork has a branch *drishti* for importing to the [drishti project](https://github.com/E-Health/drishti), specifically into [drishti-cog](https://github.com/dermatologist/drishti-cog). 
+
+### How to use
+
+```
+git clone https://github.com/gt-health/OMH-on-FHIR
+git checkout drishti
+cd OMH-on-FHIR/omhserver
+mvn clean install
+```
+
+### Include the following in the pom.xml:
+```
+<dependency>
+            <groupId>org.gtri.hdap</groupId>
+            <artifactId>mdataserver</artifactId>
+            <version>0.99.9</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+```
 ## Top Level Project Directories
 ```
 omhclient           --> AngularJS project for the OMH on FHIR user interface
